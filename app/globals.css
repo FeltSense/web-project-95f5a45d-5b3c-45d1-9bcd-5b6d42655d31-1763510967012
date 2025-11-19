@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fashion Brand Colors - Sophisticated Palette */
+  --color-primary: #1a1a1a;
+  --color-secondary: #d4af37;
+  --color-accent: #8b7355;
+  --color-rose: #c9a9a6;
+  --color-cream: #f5f1ed;
+  --color-pearl: #fdfbf7;
+  --color-charcoal: #2d2d2d;
+  --color-taupe: #9d8b7e;
+  --color-blush: #e8d5d2;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  --gradient-elegant: linear-gradient(135deg, #f5f1ed 0%, #fdfbf7 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%);
+  --gradient-rose: linear-gradient(135deg, #c9a9a6 0%, #e8d5d2 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --shadow-elegant: 0 4px 24px rgba(212, 175, 55, 0.15);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-[--color-pearl] text-[--color-primary];
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl font-light;
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-light;
+  }
+  
+  h3 {
+    @apply text-3xl md:text-4xl font-normal;
+  }
+  
+  h4 {
+    @apply text-2xl md:text-3xl font-normal;
+  }
+  
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+    letter-spacing: 0.015em;
+  }
+  
+  a {
+    @apply transition-all duration-300;
+  }
+  
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-[--color-primary] text-white font-medium tracking-wider uppercase text-sm;
+    @apply hover:bg-[--color-charcoal] hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-[--color-secondary] text-[--color-primary] font-medium tracking-wider uppercase text-sm;
+    @apply hover:bg-opacity-90 hover:shadow-[--shadow-elegant] transform hover:-translate-y-0.5;
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .btn-outline {
+    @apply px-8 py-4 border-2 border-[--color-primary] text-[--color-primary] font-medium tracking-wider uppercase text-sm;
+    @apply hover:bg-[--color-primary] hover:text-white transform hover:-translate-y-0.5;
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-[--color-secondary] to-[--color-accent] bg-clip-text text-transparent;
+  }
+  
+  .card-elegant {
+    @apply bg-white rounded-sm shadow-[--shadow-md] hover:shadow-[--shadow-lg];
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .divider-elegant {
+    @apply w-24 h-px bg-gradient-to-r from-transparent via-[--color-secondary] to-transparent mx-auto my-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(212, 175, 55, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Selection Styling */
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Image Optimization */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Smooth Transitions */
+* {
+  @apply transition-colors duration-300;
+}
